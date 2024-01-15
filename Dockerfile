@@ -4,7 +4,7 @@ RUN apk add --update --no-cache python3 py-pip tzdata && ln -sf python3 /usr/bin
 WORKDIR /app
 COPY /src .
 
-RUN pip install -r requirements
+RUN pip install --user -r requirements.txt
 
 COPY cronconfig /etc/crontabs/root
 
